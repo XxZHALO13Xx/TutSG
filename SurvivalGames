@@ -1,0 +1,37 @@
+package me.XxZHALO13Xx.TutSG;
+
+import net.milkbowl.vault.economy.Economy;
+import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.java.JavaPlugin;
+
+/**
+ * Created by ZH on 10/25/2014.
+ */
+public class SurvivalGames extends JavaPlugin{
+
+    public static SurvivalGames instance;
+    public static FileConfiguration messages, database, signs, reset, chestloot, scoreboard, barapi, kits;
+
+    public static Economy econ;
+
+    public static String version = "SurvivalGames -- Version: ";
+
+    private static PluginManager pm;
+
+
+    public void onEnable(){
+
+        if(!Bukkit.getPluginManager().isPluginEnabled("WorldEdit")) {
+            System.err.println("[SurvivalGames] ##########################################################");
+            System.err.println("[SurvivalGames] ######### NO WORLDEDIT FOUND! DISABLE PLUGIN... ##########");
+            System.err.println("[SurvivalGames] ##########################################################");
+            Bukkit.getPluginManager().disablePlugin(this);
+            return;
+        }
+
+        instance = this;
+        version += getDescription().getVersion();
+    }
+}

@@ -1,0 +1,9 @@
+public class ArenaManager {
+
+    public HashMap<String, String[]> selectedarena = new HashMap<>();
+
+    public void reinitializeDatabase(){
+        //cfg = SurvivalGames.database;
+
+    }
+}

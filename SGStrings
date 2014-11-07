@@ -1,0 +1,8 @@
+public class SGStrings {
+
+    public String MAIN = ChatColor.GRAY + "[" + ChatColor.DARK_GREEN + "" + ChatColor.BOLD + "Survival Games" + ChatColor.GRAY + "]";
+
+    public SGStrings(String MAIN) {
+        this.MAIN = MAIN;
+    }
+}

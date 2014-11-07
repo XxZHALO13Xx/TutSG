@@ -1,0 +1,13 @@
+public class BarAPIManager {
+
+    public HashMap<GameState, String> messages = new HashMap<>();
+
+    public BarAPIManager(HashMap<GameState, String> messages) {
+        this.messages = messages;
+    }
+
+    public void reinitilizeDatabase(){
+        //FileConfiguration c = SurvivalGames
+        messages.clear();
+    }
+}

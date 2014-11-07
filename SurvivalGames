@@ -12,16 +12,17 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class SurvivalGames extends JavaPlugin{
 
     public static SurvivalGames instance;
-    public static FileConfiguration messages, database, signs, reset, chestloot, scoreboard, barapi, kits;
+    public FileConfiguration messages, database, signs, reset, chestloot, scoreboard, barapi, kits;
 
-    public static Economy econ;
+    public Economy econ;
 
-    public static String version = "SurvivalGames -- Version: ";
+    public String version = "SurvivalGames -- Version: ";
 
-    private static PluginManager pm;
+    private PluginManager pm;
 
 
     public void onEnable(){
+
 
         if(!Bukkit.getPluginManager().isPluginEnabled("WorldEdit")) {
             System.err.println("[SurvivalGames] ##########################################################");
@@ -33,5 +34,23 @@ public class SurvivalGames extends JavaPlugin{
 
         instance = this;
         version += getDescription().getVersion();
+
+        getCommand("sendmessage").setExecutor(new Test());
+    }
+
+
+    public SurvivalGames(FileConfiguration messages, PluginManager pm, String version, Economy econ, FileConfiguration kits, FileConfiguration barapi, FileConfiguration scoreboard, FileConfiguration reset, FileConfiguration database, FileConfiguration signs, FileConfiguration chestloot) {
+        this.messages = messages;
+        this.pm = pm;
+        this.version = version;
+        this.econ = econ;
+        this.kits = kits;
+        this.barapi = barapi;
+        this.scoreboard = scoreboard;
+        this.reset = reset;
+        this.database = database;
+        this.signs = signs;
+        this.chestloot = chestloot;
     }
 }
+
